@@ -12,9 +12,12 @@ let pokemonList = [
     height: 0.4,
     type: ["electric"]},
   {
-    name: "Charzard",
+    name: "Charizard",
     height: 1.7,
     type: ["fire"]}
 ];
 
-for (let i=0; i <pokemonList.length; i++);
+for (let i = 0; i < pokemonList.length; i++){
+  console.log(pokemonList)
+  document.write (i)
+}
