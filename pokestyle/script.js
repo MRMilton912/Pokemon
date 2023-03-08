@@ -1,5 +1,6 @@
-alert ('Hello World!' );
+let pokemonList
 
-let favFood = 'Pizza';
-
-document.write (favFood)
+let Bulbasaur = {
+  height: 7,
+  type: ('grass', 'poison')
+};
