@@ -1,16 +1,20 @@
 let pokemonList = [
   {
     name: "Bulbasaur",
-    height: 7,
+    height: 0.7,
     type: ["grass", "poison"]},
   {
     name: "Squirtle",
-    height: 5,
+    height: 0.5,
     type: ["water"]},
   {
     name: "Pikachu",
-    height: 4,
-    type: ["electric"]}
+    height: 0.4,
+    type: ["electric"]},
+  {
+    name: "Charzard",
+    height: 1.7,
+    type: ["fire"]}
 ];
 
 for (let i=0; i <pokemonList.length; i++);
