@@ -19,5 +19,11 @@ let pokemonList = [
 
 for (let i = 0; i < pokemonList.length; i++){
   console.log(pokemonList)
-  document.write (i)
+
+let Pokemon = pokemonList[i];
+document.write (Pokemon.name + "(height: "+Pokemon.height+")" + "(type: "+Pokemon.type+")" )
+
+if (Pokemon.height >= 1){
+  document.write("That's a BIG Pokemon!")
+} 
 }
