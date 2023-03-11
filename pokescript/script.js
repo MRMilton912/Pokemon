@@ -19,10 +19,8 @@ let pokemonList = [
     type: ["fire"]}
 ];
 
-pokemonList.forEach(function (item){
-  document.write (item.name +  "(height: "+item.height+")" + "(type: "+item.type+")" )
-});
-
+//pokemonList.forEach(function (item){
+//document.write (item.name +  "(height: "+item.height+")" + "(type: "+item.type+")" )});
 //pokemonList.forEach(function(pokemon)
 //console.log(Pokemon.name + "(height: "+Pokemon.height+")" + "(type: "+Pokemon.type+")" )
 
@@ -38,8 +36,17 @@ return {
   add: add
 }
 
-
-
 })()
 
 console.log(pokeDex.getAll())
+
+pokeDex.getAll().forEach(function(pokemon) {
+  let pokemonList = document.querySelector(".pokemon-list");
+  let listpokemon = document.createElement("li");
+  let button = document.createElement("button");
+  button.innerText = pokemon.name;
+  button.classList.add("poke-button");
+  listpokemon.appendChild(button);
+pokemonList.appendChild(listpokemon);
+
+});
