@@ -1,3 +1,5 @@
+let pokeDex = (function () {
+
 let pokemonList = [
   {
     name: "Bulbasaur",
@@ -17,13 +19,27 @@ let pokemonList = [
     type: ["fire"]}
 ];
 
-for (let i = 0; i < pokemonList.length; i++){
-  console.log(pokemonList)
+pokemonList.forEach(function (item){
+  document.write (item.name +  "(height: "+item.height+")" + "(type: "+item.type+")" )
+});
 
-let Pokemon = pokemonList[i];
-document.write (Pokemon.name + "(height: "+Pokemon.height+")" + "(type: "+Pokemon.type+")" )
+//pokemonList.forEach(function(pokemon)
+//console.log(Pokemon.name + "(height: "+Pokemon.height+")" + "(type: "+Pokemon.type+")" )
 
-if (Pokemon.height >= 1){
-  document.write("That's a BIG Pokemon!")
-} 
+function getAll (){
+  return pokemonList;
 }
+function add (pokemon) {
+  pokemonList.push(pokemon)
+}
+
+return {
+  getAll: getAll,
+  add: add
+}
+
+
+
+})()
+
+console.log(pokeDex.getAll())
