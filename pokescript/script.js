@@ -56,14 +56,11 @@ let pokeDex = (function () {
     type: ["rock"]
   });
 
-  showDetails (pokemon); {
-    console.log (pokemon)
-  };
-
   pokeDex.getAll().forEach(function(pokemon) {
     pokeDex.addListItem(pokemon)
 
-  //showDetails(pokemon)
-  //console.log(pokemon)
-
   });
+
+  showDetails (pokemon); {
+    console.log (pokemon)
+  };
