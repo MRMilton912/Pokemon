@@ -9,3 +9,8 @@
   border: none;
   cursor: pointer;
 }
+
+.poke-flex {
+  display: flex;
+  flex-wrap: wrap;
+}

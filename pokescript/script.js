@@ -12,6 +12,21 @@ let pokeDex = (function () {
       console.log('Invalid Pokémon');
     }}
 
+  function getAll () {
+    return pokemonList;
+  }
+
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("poke-button");
+    button.addEventListener('click', function(event) {showDetails(pokemon)});
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
+
   function loadList(){
     return fetch(pokeweb).then(function (response) {
       return response.json()
@@ -22,22 +37,43 @@ let pokeDex = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
+        console.log(pokemon);
       });
     }).catch(function (e) {
       console.error(e);
     })
   }
 
+  function loadDetails(item) {
+    let url = DataTransferItemList.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function(e) {
+      console.error(e);
+    });
+  }
+
+  function showDetails (item) {
+    pokeDex.loadDetails(item).then(function ()
+    {
+      console.log(item);
+    });
+  }
+
   return {
-    getAll: getAll,
     add: add,
+    getAll: getAll,
     addListItem: addListItem,
-    loadList: loadList
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
   };
 
 })();
-
-  console.log(pokeDex.getAll());
 
   pokeDex.loadList().then(function() {
     pokeDex.getAll().forEach(function (pokemon) {
