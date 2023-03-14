@@ -45,7 +45,7 @@ let pokeDex = (function () {
   }
 
   function loadDetails(item) {
-    let url = DataTransferItemList.detailsUrl;
+    let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
