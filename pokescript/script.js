@@ -60,9 +60,55 @@ let pokeDex = (function () {
   function showDetails (item) {
     pokeDex.loadDetails(item).then(function ()
     {
-      console.log(item);
+
     });
-  }
+
+      let modalContainer = document.querySelector
+      ('#pokemon-list');
+      function showModal(title, text) {
+        modalContainer.innerHTML = '';
+        let modal = document.createElement('div');
+        modal.classList.add('modal')
+
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = title;
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = text;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+        modalContainer.classList.add('is-visible');
+
+        function hideModal() {
+          modalContainer.classList.remove('is-visible');
+        }
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' &&
+          modalContainer.classList.contains('is-visible')) {
+            hideModal();
+          }
+        });
+        modalContainer.addEventListener('click', (e) => {
+          let target = e.target;
+          if (target === modalContainer) {
+            hideModal();
+          }
+        });
+
+        document.querySelector('#pokemon-list'),addEventListener('click', () => {
+          showModal(pokemon.name, pokemon.height, pokemon.type)
+        });
+      }
+    };
 
   return {
     add: add,
@@ -72,11 +118,9 @@ let pokeDex = (function () {
     loadDetails: loadDetails,
     showDetails: showDetails
   };
-
 })();
-
   pokeDex.loadList().then(function() {
     pokeDex.getAll().forEach(function (pokemon) {
       pokeDex.addListItem(pokemon);
     });
-  });
+  })
