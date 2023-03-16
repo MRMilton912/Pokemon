@@ -58,22 +58,16 @@ let pokeDex = (function () {
   }
 
   function showDetails (item) {
-    pokeDex.loadDetails(item).then(function ()
-    {
-
+    loadDetails(item).then(function (){
+      showModal(item)
     });
-
 
     function showModal(title, text) {
       let modalContainer = document.querySelector('#modal-container');
       modalContainer.classList.add('is-visible');
-
-    document.querySelector('#show-modal').addEventListener('click', () => {
+      document.querySelector('#show-modal').addEventListener('click', () => {
       showModal();
     
-      function showModal(title, text) {
-        let modalContainer = document.querySelector('#modal-container');
-      
         // Clear all existing modal content
         modalContainer.innerHTML = '';
       
@@ -99,7 +93,7 @@ let pokeDex = (function () {
       
       
         modalContainer.classList.add('is-visible');
-      }
+      });
       
       document.querySelector('#show-modal').addEventListener('click', () => {
         showModal('Modal title', 'This is the modal content!');
@@ -123,4 +117,4 @@ let pokeDex = (function () {
     pokeDex.getAll().forEach(function (pokemon) {
       pokeDex.addListItem(pokemon);
     });
-  })})}}})
+  }())}}})
