@@ -61,6 +61,7 @@ let pokeDex = (function () {
     loadDetails(item).then(function (){
       showModal(item)
     });
+  }
 
     function showModal(title, text) {
       let modalContainer = document.querySelector('#modal-container');
@@ -104,17 +105,17 @@ let pokeDex = (function () {
       };
     });
 
-  return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showDetails: showDetails
+    return {
+      add: add,
+      getAll: getAll,
+      addListItem: addListItem,
+      loadList: loadList,
+    };
   };
-
+  
   pokeDex.loadList().then(function() {
     pokeDex.getAll().forEach(function (pokemon) {
       pokeDex.addListItem(pokemon);
     });
-  }())}}})
+  });
+})

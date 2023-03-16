@@ -20,6 +20,7 @@ h1 {
 }
 
 .modal {
+  /*display*/
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -33,6 +34,7 @@ h1 {
 }
 
 .modal-container {
+  display: block;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
