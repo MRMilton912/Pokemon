@@ -39,8 +39,8 @@ h1 {
 }
 
 .modal {
-  margin: auto;
   display: inline-block;
+  margin: auto;
   box-sizing: border-box;
   background: #fff;
   padding: 15px;

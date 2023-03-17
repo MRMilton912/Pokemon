@@ -4,7 +4,7 @@ let pokeDex = (function () {
   let modalContainer = document.querySelector('#modal-container');
   let container = document.querySelector('#image-container');
 
-  function add(pokemon){ 
+  function add(pokemon) {
     if (
       typeof pokemon === 'object' &&
       "name" in pokemon &&
@@ -12,24 +12,25 @@ let pokeDex = (function () {
       pokemonList.push(pokemon);
     } else {
       console.log('Invalid Pokémon');
-    }}
+    }
+  }
 
-  function getAll () {
+  function getAll() {
     return pokemonList;
   }
 
-  function addListItem(pokemon){
+  function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("poke-button");
-    button.addEventListener('click', function(event) {showDetails(pokemon)});
+    button.addEventListener('click', function (event) { showDetails(pokemon) });
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
   }
 
-  function loadList(){
+  function loadList() {
     return fetch(pokeweb).then(function (response) {
       return response.json()
     }).then(function (json) {
@@ -54,27 +55,27 @@ let pokeDex = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
-    }).catch(function(e) {
+    }).catch(function (e) {
       console.error(e);
     });
   }
 
-  function showDetails (item) {
-    loadDetails(item).then(function (){
+  function showDetails(item) {
+    loadDetails(item).then(function () {
       showModal(item);
     });
   }
 
-/*Modal*/
+  /*Modal*/
 
   function showModal(title, text) {
     let modalContainer = document.querySelector('#modal-container');
-  
+
     modalContainer.innerHTML = '';
-  
+
     let modal = document.createElement('div');
     modal.classList.add('modal');
-  
+
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
@@ -82,14 +83,14 @@ let pokeDex = (function () {
     window.addEventListener('keydown', (e) => {
       let modalContainer = document.querySelector('#modal-container');
       if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();  
+        hideModal();
       }
     });
 
-  
+
     let titleElement = document.createElement('h1');
     titleElement.innerText = title;
-  
+
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
@@ -98,7 +99,7 @@ let pokeDex = (function () {
     let myImage = document.createElement('img');
     myImage.src = '';
 
-  
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
@@ -108,8 +109,8 @@ let pokeDex = (function () {
     container.appendChild(myImage);
   }
 
-    document.querySelector('#show-modal').addEventListener('click', () => {
-     showModal('Modal title', 'This is the modal content!');  
+  document.querySelector('#show-modal').addEventListener('click', () => {
+    showModal('Modal title', 'This is the modal content!');
   });
 
   function hideModal() {
@@ -117,22 +118,22 @@ let pokeDex = (function () {
     modalContainer.classList.remove('is-visible');
   }
 
-    modalContainer.addEventListener('click', (e) => {
-      let target = e.target;
-      if (target === modalContainer) { hideModal();}
-    });/**Modal*/
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) { hideModal(); }
+  });/**Modal*/
 
-      return {
-        add: add,
-        getAll: getAll,
-        addListItem: addListItem,
-        loadList: loadList,
-        showDetails: showDetails
-      };
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    loadList: loadList,
+    showDetails: showDetails
+  };
 })(); /*IIFE*/
 
 
-pokeDex.loadList().then(function() {
+pokeDex.loadList().then(function () {
   pokeDex.getAll().forEach(function (pokemon) {
     pokeDex.addListItem(pokemon);
   });
