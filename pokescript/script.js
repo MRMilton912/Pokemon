@@ -99,11 +99,12 @@ let pokeDex = (function () {
       document.querySelector('#show-modal').addEventListener('click', () => {
         showModal('Modal title', 'This is the modal content!');
 
-        function hideModal() {
-          let modalContainer = document.querySelector('#modal-container');
-          modalContainer.classList.remove('is-visible');
-      };
+//        function hideModal() {
+//          let modalContainer = document.querySelector('#modal-container');
+//          modalContainer.classList.remove('is-visible');
+//      };
     });
+  }
 
     return {
       add: add,
@@ -112,8 +113,8 @@ let pokeDex = (function () {
       loadList: loadList,
       showDetails: showDetails
     };
-   }());
-  
+  })()
+
   pokeDex.loadList().then(function() {
     pokeDex.getAll().forEach(function (pokemon) {
       pokeDex.addListItem(pokemon);
