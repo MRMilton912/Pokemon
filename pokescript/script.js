@@ -63,6 +63,8 @@ let pokeDex = (function () {
     });
   }
 
+/*Modal*/
+
   function showModal(title, text) {/*broken*/
     let modalContainer = document.querySelector('#modal-container');
   
@@ -107,16 +109,12 @@ let pokeDex = (function () {
   
   });
 
-        modalContainer.addEventListener('click', (e) => {
-          // Since this is also triggered when clicking INSIDE the modal
-          // We only want to close if the user clicks directly on the overlay
-          let target = e.target;
-          if (target === modalContainer) {
-            hideModal();
-          }
-        });
-  })();
-
+     modalContainer.addEventListener('click', (e) => {
+      let target = e.target;
+      if (target === modalContainer) { 
+        hideModal();
+      }});  
+})(); /*Modal*/
 
   return {
     add: add,
@@ -125,7 +123,6 @@ let pokeDex = (function () {
     loadList: loadList,
     showDetails: showDetails
   };
-});
 
 pokeDex.loadList().then(function() {
   pokeDex.getAll().forEach(function (pokemon) {

@@ -20,7 +20,7 @@ h1 {
 }
 
 .modal-container {
-  display: none;
+  display: fixed;
 }
 
 .modal-container.is-visible {
@@ -55,6 +55,7 @@ h1 {
 }
 
 .modal-close {
+  display: none;
   float: right;
   border: 0;
   background: none;
