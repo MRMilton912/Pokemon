@@ -65,7 +65,7 @@ let pokeDex = (function () {
 
 /*Modal*/
 
-  function showModal(title, text) {/*broken*/
+  function showModal(title, text) {
     let modalContainer = document.querySelector('#modal-container');
   
     modalContainer.innerHTML = '';
