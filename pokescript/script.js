@@ -2,6 +2,8 @@ let pokeDex = (function () {
   let pokemonList = [];
   let pokeweb = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container');
+  let container = document.querySelector('#image-container');
+
   function add(pokemon){ 
     if (
       typeof pokemon === 'object' &&
@@ -90,6 +92,12 @@ let pokeDex = (function () {
   
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
+
+    let container = document.querySelector('#image-container');
+
+    let myImage = document.createElement('img');
+    myImage.src = '';
+
   
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -97,6 +105,7 @@ let pokeDex = (function () {
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
+    container.appendChild(myImage);
   }
 
     document.querySelector('#show-modal').addEventListener('click', () => {
@@ -108,11 +117,10 @@ let pokeDex = (function () {
     modalContainer.classList.remove('is-visible');
   }
 
-     modalContainer.addEventListener('click', (e) => {
+    modalContainer.addEventListener('click', (e) => {
       let target = e.target;
-      if (target === modalContainer) { 
-        hideModal();
-      }});
+      if (target === modalContainer) { hideModal();}
+    });/**Modal*/
 
       return {
         add: add,
