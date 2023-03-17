@@ -66,13 +66,11 @@ let pokeDex = (function () {
   function showModal(title, text) {/*broken*/
     let modalContainer = document.querySelector('#modal-container');
   
-    // Clear all existing modal content
     modalContainer.innerHTML = '';
   
     let modal = document.createElement('div');
     modal.classList.add('modal');
   
-    // Add the new modal content
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
@@ -82,6 +80,7 @@ let pokeDex = (function () {
       if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
         hideModal();  
       }
+    });
 
   
     let titleElement = document.createElement('h1');
@@ -96,15 +95,17 @@ let pokeDex = (function () {
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
-  });
-  
-  document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('Modal title', 'This is the modal content!');
+  }
 
-    function hideModal() {
+    document.querySelector('#show-modal').addEventListener('click', () => {
+     showModal('Modal title', 'This is the modal content!');
+
+     function hideModal() {
       let modalContainer = document.querySelector('#modal-container');
       modalContainer.classList.remove('is-visible');
     }
+  
+  });
 
         modalContainer.addEventListener('click', (e) => {
           // Since this is also triggered when clicking INSIDE the modal
@@ -124,7 +125,7 @@ let pokeDex = (function () {
     loadList: loadList,
     showDetails: showDetails
   };
-})
+});
 
 pokeDex.loadList().then(function() {
   pokeDex.getAll().forEach(function (pokemon) {
