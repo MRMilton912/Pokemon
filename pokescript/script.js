@@ -59,7 +59,7 @@ let pokeDex = (function () {
 
   function showDetails (item) {
     loadDetails(item).then(function (){
-      showModal(item)
+      showModal(item);
     });
   }
 

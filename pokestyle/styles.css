@@ -59,3 +59,15 @@ h1 {
   display: grid;
   text-align: center;
 }
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal-close:hover {
+  cursor: pointer;
+}
