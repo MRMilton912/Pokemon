@@ -110,12 +110,12 @@ let pokeDex = (function () {
       getAll: getAll,
       addListItem: addListItem,
       loadList: loadList,
+      showDetails: showDetails
     };
-  };
+   }());
   
   pokeDex.loadList().then(function() {
     pokeDex.getAll().forEach(function (pokemon) {
       pokeDex.addListItem(pokemon);
     });
   });
-})
