@@ -61,7 +61,7 @@ let pokeDex = (function () {
   }
 
   function showDetails(item) {
-    loadDetails(item).then(function () {
+    loadDetails(item).then(function () { /**open Modal**/
       showModal(item);
     });
   }
@@ -82,7 +82,7 @@ let pokeDex = (function () {
     closeButtonElement.addEventListener('click', hideModal);
     window.addEventListener('keydown', (e) => {
       let modalContainer = document.querySelector('#modal-container');
-      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
         hideModal();
       }
     });
@@ -100,7 +100,7 @@ let pokeDex = (function () {
     myImage.src = '';
 
 
-    modal.appendChild(closeButtonElement);
+    modal.appendChild(closeButtonElement); /**close Modal**/
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
