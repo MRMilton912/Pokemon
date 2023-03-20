@@ -68,7 +68,7 @@ let pokeDex = (function () {
 
   /*Modal*/
 
-  function showModal(title, text) {
+  function showModal(pokemon) {
     let modalContainer = document.querySelector('#modal-container');
 
     modalContainer.innerHTML = '';
@@ -89,24 +89,31 @@ let pokeDex = (function () {
 
 
     let titleElement = document.createElement('h1');
-    titleElement.innerText = title;
+    titleElement.innerText = pokemon.name;
 
-    let contentElement = document.createElement('p');
-    contentElement.innerText = text;
+    let name = document.createElement('p');
+    name.innerText = 'Name: ' + pokemon.name;
 
-    let container = document.querySelector('#image-container');
+    let type = document.createElement('p');
+    type.innerText = 'Type: ' + pokemon.types[0].type.name;
+
+    let imgContainer = document.createElement('div')
+    imgContainer.id = 'image-container';
 
     let myImage = document.createElement('img');
-    myImage.src = '';
+    myImage.src = pokemon.imageUrl;
+
+    imgContainer.appendChild(myImage);
 
 
     modal.appendChild(closeButtonElement); /**close Modal**/
     modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
+    modal.appendChild(name);
+    modal.appendChild(type);
+    modal.appendChild(imgContainer);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
-    container.appendChild(myImage);
   }
 
   document.querySelector('#show-modal').addEventListener('click', () => {
