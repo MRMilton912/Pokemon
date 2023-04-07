@@ -89,7 +89,7 @@ let pokeDex = (function () {
     let myImage = document.createElement('img');
     myImage.src = pokemon.imageUrl;
 
-    imageElement.appendChild(myImage); /*Image?*/
+    imageElement.append(myImage); /*Image?*/
 
     modalTitle.append(nameElement); /*Bootstrap-Name-Title*/
     modalBody.append(imageElement); /*Image*/
@@ -98,8 +98,8 @@ let pokeDex = (function () {
 
     /**/
 
-    modal.appendChild(closeButtonElement); /*close Modal*/
-    modalContainer.appendChild(modal); /*append*/
+    modal.append(closeButtonElement); /*close Button for Modal*/
+    modalContainer.append(modal); /*append*/
     modalContainer.classList.add('is-visible'); /*Container*/
   }
 
