@@ -91,21 +91,16 @@ let pokeDex = (function () {
 
     imgContainer.appendChild(myImage); /*Image?*/
 
-    modalTitle.append(nameElement); /*Bootstrap*/
+    modalTitle.append(nameElement); /*Bootstrap-Name-Title*/
     modalBody.append(imageElement); /*Image*/
-    modalBody.append(heightElement);
     modalBody.append(typeElement);
-    
-    /**/
-    
-    modal.appendChild(closeButtonElement); /*close Modal*/
-    modal.appendChild(titleElement); /*Title*/
-    modal.appendChild(name); /*Name*/
-    modal.appendChild(type); /*Type*/
-    modal.appendChild(imgContainer); /*Image*/
-    modalContainer.appendChild(modal);
+    modalBody.append(heightElement);
 
-    modalContainer.classList.add('is-visible');
+    /**/
+
+    modal.appendChild(closeButtonElement); /*close Modal*/
+    modalContainer.appendChild(modal);
+    modalContainer.classList.add('is-visible'); /*Container*/
   }
 
   document.querySelector('#show-modal').addEventListener('click', () => {
