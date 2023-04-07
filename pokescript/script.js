@@ -99,7 +99,7 @@ let pokeDex = (function () {
     /**/
 
     modal.appendChild(closeButtonElement); /*close Modal*/
-    modalContainer.appendChild(modal);
+    modalContainer.appendChild(modal); /*append*/
     modalContainer.classList.add('is-visible'); /*Container*/
   }
 
