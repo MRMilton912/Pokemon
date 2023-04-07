@@ -81,7 +81,7 @@ let pokeDex = (function () {
     /*Close modal?*/
   
     let nameElement = $("<h1>" + pokemon.name + "</h1>")
-    let imageElement = $('<img class="modal-img" style="width:50%">');
+    let imageElement = $('<img class="modal-img" style="width:50%">'); /*Image*/
     imageElement.attr("src", pokemon.imageUrl)
     let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
     let typeElement = $("<p>" + "type : " + pokemon.type + "</p>");
@@ -91,17 +91,18 @@ let pokeDex = (function () {
 
     imgContainer.appendChild(myImage); /*Image?*/
 
-    modalTitle.append(nameElement);
-    modalBody.append(imageElement);
+    modalTitle.append(nameElement); /*Bootstrap*/
+    modalBody.append(imageElement); /*Image*/
     modalBody.append(heightElement);
     modalBody.append(typeElement);
-
-
+    
+    /**/
+    
     modal.appendChild(closeButtonElement); /*close Modal*/
-    modal.appendChild(titleElement);
-    modal.appendChild(name);
-    modal.appendChild(type);
-    modal.appendChild(imgContainer);
+    modal.appendChild(titleElement); /*Title*/
+    modal.appendChild(name); /*Name*/
+    modal.appendChild(type); /*Type*/
+    modal.appendChild(imgContainer); /*Image*/
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
