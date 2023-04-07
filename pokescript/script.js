@@ -89,7 +89,7 @@ let pokeDex = (function () {
     let myImage = document.createElement('img');
     myImage.src = pokemon.imageUrl;
 
-    imgContainer.appendChild(myImage); /*Image?*/
+    imageElement.appendChild(myImage); /*Image?*/
 
     modalTitle.append(nameElement); /*Bootstrap-Name-Title*/
     modalBody.append(imageElement); /*Image*/
