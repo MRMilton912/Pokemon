@@ -98,8 +98,6 @@ let pokeDex = (function () {
 
     /**/
 
-    modal.append(closeButtonElement); /*close Button for Modal*/
-    modalContainer.append(modal); /*append*/
     modalContainer.classList.add('is-visible'); /*Container*/
   }
 

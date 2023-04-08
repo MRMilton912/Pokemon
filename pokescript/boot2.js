@@ -35,12 +35,13 @@ function showModal(pokemon) {
 
   imgContainer.appendChild(myImage);
 
-
+  modal.append(closeButtonElement); /*close Button for Modal*/
   modal.appendChild(closeButtonElement); /**close Modal**/
   modal.appendChild(titleElement);
   modal.appendChild(name);
   modal.appendChild(type);
   modal.appendChild(imgContainer);
+  
   modalContainer.appendChild(modal);
 
   modalContainer.classList.add('is-visible');
