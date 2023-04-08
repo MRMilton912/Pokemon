@@ -85,7 +85,7 @@ let pokeDex = (function () {
     let imageElement = $('<img class="modal-img" style="width:50%">'); /*Image*/
     imageElement.attr("src", pokemon.imageUrl)
     let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
-    let typeElement = $("<p>" + "type : " + pokemon.types + "</p>");
+    let typeElement = $("<p>" + "type : " + pokemon.types[0].type.name + "</p>");
 
     let myImage = document.createElement('img');
     myImage.src = pokemon.imageUrl;
