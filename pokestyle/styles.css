@@ -49,6 +49,10 @@ h1 {
   text-align: left;
 }
 
+.modal-body {
+  width: 300px;
+}
+
 .m-active {
   visibility: visible;
   opacity: 1;

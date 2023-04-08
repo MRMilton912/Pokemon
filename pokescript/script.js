@@ -108,6 +108,9 @@ let pokeDex = (function () {
 
   function hideModal() {
     let modalContainer = document.querySelector('#modal-container'); /*Hide modal*/
+    $('.modal-title').empty();
+    $('.modal-body').empty();
+    $('.modal-footer').empty();
     modalContainer.classList.remove('is-visible');
   }
 
