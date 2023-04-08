@@ -73,7 +73,8 @@ let pokeDex = (function () {
 
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
-    let modalHeader = $(".modal-header");
+
+    /*let modalHeader = $(".modal-header");*/
   
     modalTitle.empty();
     modalBody.empty();
@@ -84,12 +85,12 @@ let pokeDex = (function () {
     let imageElement = $('<img class="modal-img" style="width:50%">'); /*Image*/
     imageElement.attr("src", pokemon.imageUrl)
     let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
-    let typeElement = $("<p>" + "type : " + pokemon.type + "</p>");
+    let typeElement = $("<p>" + "type : " + pokemon.types + "</p>");
 
     let myImage = document.createElement('img');
     myImage.src = pokemon.imageUrl;
 
-    imageElement.append(myImage); /*Image?*/
+    /*imageElement.append(myImage); Image?*/
 
     modalTitle.append(nameElement); /*Bootstrap-Name-Title*/
     modalBody.append(imageElement); /*Image*/
