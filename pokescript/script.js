@@ -21,7 +21,9 @@ let pokeDex = (function () {
 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("li");
+    let listpokemon = document.createElement("div");
+    listpokemon.classList.add('col-sm-6')
+    listpokemon.classList.add('col-lg-4')
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("poke-button");

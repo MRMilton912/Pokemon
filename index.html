@@ -11,15 +11,13 @@
   <body>
 
     <header><!--class="container"-->
-      <nav class="navbar">
-        <a class="navbar-brand" href="Bootstrap.html">Pokedex</a>
+      <nav class="navbar container-md">
+        <a class="navbar-brand" href="Bootstrap.html">Pokedex</a><!--add image-->
       </nav>
     </header>
     <main class="container">
-      <div class="row">
-        <div class="col-12">
-          <ul class="pokemon-list list-group" id="show-modal"></ul>
-        </div>
+      <div class="pokemon-list row" id="show-modal">
+        <!-- List is auto generated from javascript -->
       </div>
       <!-- Modal -->
       <div class="modal" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-container" aria-hidden="true">

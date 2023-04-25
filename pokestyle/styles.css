@@ -1,11 +1,26 @@
-.poke-button {
+
+.navbar {
+  background-color: black;/*add yellow*/
+}
+
+.navbar-brand {
+  font-size: 35px;
+  padding: 20px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.poke-button { /*size*/
   display: inline-block;
-  background-color: blueviolet;
+  background-color: red;
   color: white;
   font-size: 18px;
   margin: 4px 2px;
   padding: 16px 32px;
   border-radius: 8px;
+  width: 160px;
   border: none;
   cursor: pointer;
 }
@@ -13,6 +28,10 @@
 .poke-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+body {
+  background-color: gray;
 }
 
 h1 {
