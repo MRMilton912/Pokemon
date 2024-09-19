@@ -1,6 +1,5 @@
-
 .navbar {
-  background-color: black;/*add yellow*/
+  background-color: black; /*add yellow*/
 }
 
 .navbar-brand {
@@ -12,7 +11,8 @@
   padding: 20px;
 }
 
-.poke-button { /*size*/
+.poke-button {
+  /*size*/
   display: inline-block;
   background-color: red;
   color: white;
@@ -51,7 +51,7 @@ h1 {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999;   /* to show it above other content */
+  z-index: 999; /* to show it above other content */
   overflow: auto; /* to allow scrolling if the screen is not high enough*/
   display: grid; /* this is used to center the modal */
   text-align: center;
